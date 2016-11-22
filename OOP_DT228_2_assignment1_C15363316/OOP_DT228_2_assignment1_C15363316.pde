@@ -12,6 +12,7 @@ void draw() {
   noStroke();
   fill(255); //fill(#f60a20, 200);
   heart();
+  //star();
 }
 
 void heart()
