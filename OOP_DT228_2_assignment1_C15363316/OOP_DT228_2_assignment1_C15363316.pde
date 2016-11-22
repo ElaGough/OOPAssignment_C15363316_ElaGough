@@ -17,7 +17,7 @@ void draw() {
   translate(width/2, height/2); //translate (0,0) to centre of screen
   
   noStroke();
-  fill(255);
+  fill(random(50,255));
   while (starList.size()>100) {
     starList.remove(0);
   }
@@ -29,5 +29,7 @@ void draw() {
     starList.get(i).render();
   }
   
+  
+  fill(#f60a20, 200);
   heart.render();
 }
