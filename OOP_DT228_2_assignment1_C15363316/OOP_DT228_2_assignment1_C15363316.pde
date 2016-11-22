@@ -4,39 +4,43 @@
 
 void setup() {
   size(1000, 600);
-  heart = new Heart();
-  stars = new Stars();
+  heart = new Heart(); //initilases heart
+  stars = new Stars(); //initilases stars
 }
 
-Heart heart;
-Stars stars;
-ArrayList<Stars> starList = new ArrayList<Stars>();
+Heart heart; //declares heart
+Stars stars; //declares stars
+
+ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
 
 void draw() {
-  background(0);//background(#262526);
+  background(25);
   translate(width/2, height/2); //translate (0,0) to centre of screen
   noStroke();
   
+  //cleaner code in draw to call functions:
   callstars();
   callheart();
   
 }
 
+//function to call stars
 void callstars(){
-  fill(random(50,255));
-  while (starList.size()>100) {
+  fill(random(50,255)); //randomizes colour of stars to make them flicker
+  while (starList.size()>100) { //stops arrayList from getting too big
     starList.remove(0);
   }
-  stars = new Stars();
-  starList.add(stars);
+  stars = new Stars(); //get a new star
+  starList.add(stars); //add stars to arrayList
   
-  for(int i =0 ; i < starList.size() ; i++){
+  for(int i =0 ; i < starList.size() ; i++){ //calling functions in class Stars
     starList.get(i).update();
     starList.get(i).render();
   }
 }
 
-void callheart(){
+//function to call heart
+void callheart(){ //calling function in class Heart
   fill(#f60a20, 200);
   heart.render();
 }
