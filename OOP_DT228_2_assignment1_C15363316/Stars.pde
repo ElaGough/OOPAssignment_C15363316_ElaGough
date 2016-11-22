@@ -3,7 +3,7 @@ class Stars
   PVector pos;
   PVector velocity;
   
-  Stars ( )
+  Stars()
   {
     pos = new PVector(0,0);
     velocity = new PVector(random(-10,10),random(-10,10));
