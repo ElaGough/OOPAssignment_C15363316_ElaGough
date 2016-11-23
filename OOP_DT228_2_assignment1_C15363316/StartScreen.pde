@@ -1,36 +1,42 @@
-boolean EndButtonPressed = false;
-boolean StartButtonPressed = false;
-
-int startX, startY;      // Position of start button
-int endX, endY;      // Position of end button
-int startSize = 100;     // Diameter of start button
-int endSize = 100;     // Diameter of end button
-color startColor, endColor, baseColor;
-color startHighlight, endHighlight;
-color currentColor;
-boolean startOver = false;
-boolean endOver = false;
-
-
 class StartScreen
 {
+  float startX, startY;      // Position of start button
+  float endX, endY;      // Position of end button
+  int startSize = 300;     // Diameter of start button
+  int endSize = 300;     // Diameter of end button
+  color startColor, endColor, baseColor; //normal colour
+  color startHighlight, endHighlight; //highlighted colour when mouse hovers over button
+  color currentColor;
+  boolean startOver = false;
+  boolean endOver = false;
   
   void render()
   {
-    startColor = color(0);
-    startHighlight = color(51);
-    endColor = color(255);
-    endHighlight = color(204);
-    baseColor = color(102);
-    currentColor = baseColor;
-    startX = width/2-startSize-10;
-    startY = height/2-startSize/2;
-    endX = width/2-endSize-10;
-    endY = height/2-endSize/2;
+    startColor = color(100);
+    startHighlight = color(200);
+    endColor = color(100);
+    endHighlight = color(200);
+    startX = 150;
+    startY = 150;
+    endX = -450;
+    endY = 150;
     
-    stroke(200);
+    update(mouseX, mouseY);
+    stroke(0);
     fill(100);
+    
+    if (startOver) {
+      fill(startHighlight);
+    } else {
+      fill(startColor);
+    }
     rect(150,150,300,100,40);  //rect(x1,y1,width,height,corners_ratio);
+    
+    if (endOver) {
+      fill(endHighlight);
+    } else {
+      fill(endColor);
+    }
     rect(-450,150,300,100,40);
     
     fill(0);
@@ -40,72 +46,40 @@ class StartScreen
     fill(200);
     textSize(65);
     text("Welcome to the Holodeck",-450,-200);
-    
-    update(mouseX, mouseY);
-    
-    if (startOver) {
-      fill(startHighlight);
-    } else {
-      fill(startColor);
-    }
-    stroke(255);
-    
-    if (endOver) {
-      fill(endHighlight);
-    } else {
-      fill(endColor);
-    }
-    
-    
-      /*if(StartButtonPressed == true) {
-        screen1 = false;
-        screen2 = true;
-      }
-      if(EndButtonPressed == true) {
-        System.exit(0);
-      }*/
-  }
-  
-  void update(int x, int y) {
-    if ( overEnd(endX, endY, endSize, endSize) ) {
-      endOver = true;
-      startOver = false;
-    } else if ( overStart(startX, startY, startSize, startSize) ) {
-      startOver = true;
-      endOver = false;
-    } else {
-      endOver = endOver = false;
-    }
-}
+  }//end render()
 
-void mousePressed() {
-  if (endOver) {
-    currentColor = endColor;
-  }
-  if (startOver) {
-    currentColor = startColor;
-  }
-}
+  
+    void update(float x, float y) {
+      if ( overEnd(endX + width /2 , endY + height /2, endSize, endSize/3) ) {
+        endOver = true;
+        startOver = false;
+      } else if ( overStart(startX + width / 2, startY + height /2 , startSize, startSize/3) ) {
+        startOver = true;
+        endOver = false;
+      } else {
+        endOver = startOver = false;
+      }
+    }//end update()
 
   
   
   //checking to see if mouse is at buttons
-  boolean overStart(int x, int y, int width, int height)  {
-    if (mouseX >= x && mouseX <= x+width && 
-        mouseY >= y && mouseY <= y+height) {
+  boolean overStart(float x, float y, float w, float h) {
+    if (mouseX >= x && mouseX <= x+w && 
+        mouseY >= y && mouseY <= y+h) {
       return true;
     } else {
       return false;
     }
-  }
+  }//end of overStart()
   
-  boolean overEnd(int x, int y, int width, int height)  {
-    if (mouseX >= x && mouseX <= x+width && 
-        mouseY >= y && mouseY <= y+height) {
+  boolean overEnd(float x, float y, float w, float h)  {
+    if (mouseX >= x && mouseX <= x+w && 
+        mouseY >= y && mouseY <= y+h) {
       return true;
     } else {
       return false;
     }
-  }
+  }//end of overEnd()
   
-}
+}//end of class
