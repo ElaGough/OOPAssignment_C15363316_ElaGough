@@ -37,6 +37,9 @@ class StartScreen
     textSize(90);
     text("Start",167,230);
     text("End",-390,230);
+    fill(200);
+    textSize(65);
+    text("Welcome to the Holodeck",-450,-200);
     
     update(mouseX, mouseY);
     
