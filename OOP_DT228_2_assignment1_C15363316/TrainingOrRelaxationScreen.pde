@@ -5,7 +5,7 @@ class TrainingOrRelaxationScreen
   float backX, backY;
   int relaxationSize = 300;     // Diameter of start button
   int trainingSize = 300;     // Diameter of end button
-  int backSize = 200;
+  int backSize = 100;
   color relaxationColor, trainingColor, backColor; //normal colour
   color relaxationHighlight, trainingHighlight, backHighlight; //highlighted colour when mouse hovers over button
   boolean relaxationOver = false;
@@ -24,8 +24,8 @@ class TrainingOrRelaxationScreen
     relaxationY = -150;
     trainingX = -450;
     trainingY = -150;
-    backX = 150;
-    backY = 150;
+    backX = 390;
+    backY = 240;
     
     update(mouseX, mouseY);
     stroke(0);
@@ -50,12 +50,16 @@ class TrainingOrRelaxationScreen
     } else {
       fill(backColor);
     }
-    rect(backX,backY,backSize,100,40);
+    rect(backX,backY,backSize,50,40);
     
     fill(0);
     textSize(45);
     text("Relaxation",relaxationX+20,relaxationY+60);
     text("Training",trainingX+45,trainingY+60);
+    
+    textSize(30);
+    text("Back",backX+15,backY+35);
+    
     fill(200);
     textSize(70);
     text("Choose an option",-340,-200);
@@ -76,7 +80,7 @@ class TrainingOrRelaxationScreen
         trainingOver = false;
         backOver = true;
       } else {
-        trainingOver = relaxationOver = false;
+        trainingOver = relaxationOver = backOver = false;
       }
     }//end update()
 

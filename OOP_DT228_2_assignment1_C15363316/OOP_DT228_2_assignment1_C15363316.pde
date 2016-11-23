@@ -69,10 +69,16 @@ void mousePressed() {
     screen1 = false;
     screen2 = false;
     screen_training = true;
+    training_or_relaxation_screen.backOver = false;
   }
   if (training_or_relaxation_screen.relaxationOver == true) {
     screen1 = false;
     screen2 = false;
     screen_relaxation = true;
+  }
+  if (training_or_relaxation_screen.backOver == true) {
+    screen1 = true;
+    screen2 = false;
+    screen_relaxation = false;
   }
  }//end mousePressed()
