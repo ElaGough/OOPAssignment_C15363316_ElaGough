@@ -4,6 +4,12 @@
 
 void setup() {
   size(1000, 600);
+  
+  //setting font
+  PFont monta;
+  monta = createFont("Montalban Condensed Bold.otf",100);
+  textFont(monta);
+  
   heart = new Heart(); //initilases heart
   stars = new Stars(); //initilases stars
   startscreen = new StartScreen();
