@@ -2,8 +2,8 @@ class TrainingOrRelaxationScreen
 {
   float relaxationX, relaxationY;      // Position of start button
   float trainingX, trainingY;      // Position of end button
-  int relaxationSize = 400;     // Diameter of start button
-  int trainingSize = 400;     // Diameter of end button
+  int relaxationSize = 300;     // Diameter of start button
+  int trainingSize = 300;     // Diameter of end button
   color relaxationColor, trainingColor; //normal colour
   color relaxationHighlight, trainingHighlight; //highlighted colour when mouse hovers over button
   boolean relaxationOver = false;
@@ -39,11 +39,11 @@ class TrainingOrRelaxationScreen
     rect(trainingX,trainingY,trainingSize,100,40);
     
     fill(0);
-    textSize(90);
+    textSize(50);
     text("Relaxation",167,230);
     text("Training",-390,230);
     fill(200);
-    textSize(65);
+    textSize(90);
     text("Choose an option",-450,-200);
   }//end render()
 
