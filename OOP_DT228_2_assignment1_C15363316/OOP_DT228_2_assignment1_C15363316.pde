@@ -1,6 +1,6 @@
 import processing.sound.*;
 
-//OOP Assignment - Holla Desk
+//OOP Assignment - Holodeck
 //DT228-2
 //Ela Gough C15363316
 
@@ -32,6 +32,7 @@ boolean screen1 = true; //StartScreen
 boolean screen2 = false; //TrainingOrRelaxationScreen
 boolean screen_training = false;
 boolean screen_relaxation = false;
+boolean screen_back_start = false;
 
 ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
 
@@ -52,6 +53,10 @@ void draw() {
   if (screen2 == true) {
     training_or_relaxation_screen.render();
   }
+  if (screen_back_start == true)
+  {
+    start_screen.render();
+  }
 }
 
 void mousePressed() {
@@ -69,7 +74,6 @@ void mousePressed() {
     screen1 = false;
     screen2 = false;
     screen_training = true;
-    training_or_relaxation_screen.backOver = false;
   }
   if (training_or_relaxation_screen.relaxationOver == true) {
     screen1 = false;
@@ -77,8 +81,8 @@ void mousePressed() {
     screen_relaxation = true;
   }
   if (training_or_relaxation_screen.backOver == true) {
-    screen1 = true;
-    screen2 = false;
-    screen_relaxation = false;
+      screen1 = true;
+      screen2 = false;
+      screen_back_start = false;
   }
  }//end mousePressed()
