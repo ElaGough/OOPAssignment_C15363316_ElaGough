@@ -13,16 +13,21 @@ void setup() {
   heart = new Heart(); //initilases heart
   stars = new Stars(); //initilases stars
   start_screen = new StartScreen();
+  training_or_relaxation_screen = new TrainingOrRelaxationScreen();
 }
 
 Heart heart; //declares heart
 Stars stars; //declares stars
 StartScreen start_screen;
+TrainingOrRelaxationScreen training_or_relaxation_screen;
 
 boolean screen1 = true; //StartScreen
 boolean screen2 = false; //TrainingOrRelaxationScreen
+boolean screen_training = false;
+boolean screen_relaxation = false;
 
 ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
+
 
 void draw() {
   background(20);
@@ -38,16 +43,29 @@ void draw() {
     start_screen.render();
   } 
   if (screen2 == true) {
-    
+    training_or_relaxation_screen.render();
   }
 }
 
 void mousePressed() {
- if (start_screen.endOver == true) {
-      System.exit(0);
-    }
-    if (start_screen.startOver == true) {
-      screen1 = false;
-      screen2 = true;
-    }
+  //start_screen
+  if (start_screen.endOver == true) {
+    System.exit(0);
+  }
+  if (start_screen.startOver == true) {
+    screen1 = false;
+    screen2 = true;
+  }
+  
+  //training_or_relaxation_screen
+  if (training_or_relaxation_screen.trainingOver == true) {
+    screen1 = false;
+    screen2 = false;
+    screen_training = true;
+  }
+  if (training_or_relaxation_screen.relaxationOver == true) {
+    screen1 = false;
+    screen2 = false;
+    screen_relaxation = true;
+  }
  }//end mousePressed()

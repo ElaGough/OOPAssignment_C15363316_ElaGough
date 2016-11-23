@@ -30,14 +30,14 @@ class StartScreen
     } else {
       fill(startColor);
     }
-    rect(150,150,300,100,40);  //rect(x1,y1,width,height,corners_ratio);
+    rect(startX,startY,startSize,100,40);  //rect(x1,y1,width,height,corners_ratio);
     
     if (endOver) {
       fill(endHighlight);
     } else {
       fill(endColor);
     }
-    rect(-450,150,300,100,40);
+    rect(endX,endY,endSize,100,40);
     
     fill(0);
     textSize(90);
