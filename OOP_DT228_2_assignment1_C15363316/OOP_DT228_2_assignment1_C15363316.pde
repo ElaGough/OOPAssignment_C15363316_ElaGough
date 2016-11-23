@@ -4,6 +4,21 @@ import processing.sound.*;
 //DT228-2
 //Ela Gough C15363316
 
+SoundFile BootySwing;
+
+Heart heart; //declares heart
+Stars stars; //declares stars
+StartScreen start_screen;
+TrainingOrRelaxationScreen training_or_relaxation_screen;
+
+boolean screen1 = true; //StartScreen
+boolean screen2 = false; //TrainingOrRelaxationScreen
+boolean screen_training = false;
+boolean screen_relaxation = false;
+boolean screen_back_start = false;
+
+ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
+
 void setup() {
   size(1000, 600);
   
@@ -21,21 +36,6 @@ void setup() {
   BootySwing.play();
 }
 
-SoundFile BootySwing;
-
-Heart heart; //declares heart
-Stars stars; //declares stars
-StartScreen start_screen;
-TrainingOrRelaxationScreen training_or_relaxation_screen;
-
-boolean screen1 = true; //StartScreen
-boolean screen2 = false; //TrainingOrRelaxationScreen
-boolean screen_training = false;
-boolean screen_relaxation = false;
-boolean screen_back_start = false;
-
-ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
-
 
 void draw() {
   background(20);
@@ -47,7 +47,8 @@ void draw() {
   callstars();
   callheart();
   
-  if (screen1 == true) {
+  if (screen1 == true) { 
+    screen_back_start = false;
     start_screen.render();
   } 
   if (screen2 == true) {
@@ -59,30 +60,34 @@ void draw() {
   }
 }
 
+
 void mousePressed() {
   //start_screen
   if (start_screen.endOver == true) {
     System.exit(0);
   }
   if (start_screen.startOver == true) {
+    screen_back_start = false;
     screen1 = false;
     screen2 = true;
   }
   
   //training_or_relaxation_screen
   if (training_or_relaxation_screen.trainingOver == true) {
+    screen_back_start = false;
     screen1 = false;
     screen2 = false;
     screen_training = true;
   }
   if (training_or_relaxation_screen.relaxationOver == true) {
+    screen_back_start = false;
     screen1 = false;
     screen2 = false;
     screen_relaxation = true;
   }
   if (training_or_relaxation_screen.backOver == true) {
-      screen1 = true;
-      screen2 = false;
-      screen_back_start = false;
+    screen1 = true;
+    screen2 = false;
+    screen_back_start = true;
   }
  }//end mousePressed()
