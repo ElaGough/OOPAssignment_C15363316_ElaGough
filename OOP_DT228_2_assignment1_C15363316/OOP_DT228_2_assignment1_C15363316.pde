@@ -1,3 +1,5 @@
+import processing.sound.*;
+
 //OOP Assignment - Holla Desk
 //DT228-2
 //Ela Gough C15363316
@@ -14,7 +16,12 @@ void setup() {
   stars = new Stars(); //initilases stars
   start_screen = new StartScreen();
   training_or_relaxation_screen = new TrainingOrRelaxationScreen();
+  
+  BootySwing = new SoundFile(this, "Parov Stelar - Booty Swing.mp3");
+  BootySwing.play();
 }
+
+SoundFile BootySwing;
 
 Heart heart; //declares heart
 Stars stars; //declares stars
