@@ -27,13 +27,14 @@ void setup() {
   monta = createFont("Montalban Condensed Bold.otf",100);
   textFont(monta);
   
+  //background sound
+  BootySwing = new SoundFile(this, "Parov Stelar - Booty Swing.mp3");
+  BootySwing.play();
+  
   heart = new Heart(); //initilases heart
   stars = new Stars(); //initilases stars
   start_screen = new StartScreen();
   training_or_relaxation_screen = new TrainingOrRelaxationScreen();
-  
-  BootySwing = new SoundFile(this, "Parov Stelar - Booty Swing.mp3");
-  BootySwing.play();
 }
 
 
@@ -66,34 +67,34 @@ void mousePressed() {
     System.exit(0);
   }
   if (start_screen.startOver == true) {
-    back_screen1 = false;
     screen1 = false;
     screen2 = true;
     screen_training = false;
     screen_relaxation = false;
+    back_screen1 = false;
   }
   
   //training_or_relaxation_screen
   if (training_or_relaxation_screen.trainingOver == true) {
-    back_screen1 = false;
     screen1 = false;
     screen2 = false;
     screen_training = true;
     screen_relaxation = false;
+    back_screen1 = false;
   }
   if (training_or_relaxation_screen.relaxationOver == true) {
-    back_screen1 = false;
     screen1 = false;
     screen2 = false;
     screen_training = false;
     screen_relaxation = true;
+    back_screen1 = false;
   }
   if (training_or_relaxation_screen.backOver == true) {
-    back_screen1 = false;
     screen1 = true;
     screen2 = false;
     screen_training = false;
     screen_relaxation = false;
+    back_screen1 = true;
   }
   
   println("screen1 ",screen1);
@@ -101,4 +102,5 @@ void mousePressed() {
   println("screen_training ",screen_training);
   println("screen_relaxation ",screen_relaxation);
   println("back_screen1 ",back_screen1);
+  println("\n");
  }//end mousePressed()
