@@ -26,9 +26,9 @@ class TrainingScreen
     missionHighlight = color(200);
     backColor = color(100);
     backHighlight = color(200);
-    weaponsX = -145;
+    weaponsX = -150;
     weaponsY = -150;
-    combatX = -450;
+    combatX = -460;
     combatY = -150;
     missionX = 160;
     missionY = -150;
@@ -78,7 +78,9 @@ class TrainingScreen
     
     fill(200);
     textSize(70);
-    text("Choose an option",-340,-200);
+    text("Training",-150,-250);
+    textSize(40);
+    text("a healthy body is a healthy mind",-340,-170);
   }//end render()
 
   
