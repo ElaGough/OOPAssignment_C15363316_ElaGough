@@ -68,7 +68,7 @@ class TrainingOrRelaxationScreen
 
   
     void update(float x, float y) {
-      if ( overEnd(trainingX + width /2 , trainingY + height /2, trainingSize, trainingSize/3) ) {
+      if ( overTraining(trainingX + width /2 , trainingY + height /2, trainingSize, trainingSize/3) ) {
         trainingOver = true;
         relaxationOver = false;
         backOver = false;
@@ -76,7 +76,7 @@ class TrainingOrRelaxationScreen
         relaxationOver = true;
         trainingOver = false;
         backOver = false;
-      } else if ( overBack(backX + width / 2, backY + height /2 , backSize, backSize/3) ) {
+      } else if ( overBack(backX + width / 2, backY + height /2 , backSize, backSize/2) ) {
         relaxationOver = false;
         trainingOver = false;
         backOver = true;
@@ -97,7 +97,7 @@ class TrainingOrRelaxationScreen
     }
   }//end of overStart()
   
-  boolean overEnd(float x, float y, float w, float h)  {
+  boolean overTraining(float x, float y, float w, float h)  {
     if (mouseX >= x && mouseX <= x+w && 
         mouseY >= y && mouseY <= y+h) {
       return true;

@@ -10,6 +10,7 @@ Heart heart; //declares heart
 Stars stars; //declares stars
 StartScreen start_screen;
 TrainingOrRelaxationScreen training_or_relaxation_screen;
+TrainingScreen training_screen;
 
 boolean screen1 = true; //StartScreen
 boolean screen2 = false; //TrainingOrRelaxationScreen
@@ -35,6 +36,7 @@ void setup() {
   stars = new Stars(); //initilases stars
   start_screen = new StartScreen();
   training_or_relaxation_screen = new TrainingOrRelaxationScreen();
+  training_screen = new TrainingScreen();
 }
 
 
@@ -60,6 +62,10 @@ void draw() {
   if (back_screen1 == true)
   {
     start_screen.render();
+  }
+  if (screen_training == true)
+  {
+    training_screen.render();
   }
 }
 
