@@ -12,8 +12,6 @@ class StartScreen
   
   void render()
   {
-    //startOver = false;
-    //endOver = false;
     startColor = color(100);
     startHighlight = color(200);
     endColor = color(100);
