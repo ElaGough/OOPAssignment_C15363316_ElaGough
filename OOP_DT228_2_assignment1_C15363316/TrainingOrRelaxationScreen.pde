@@ -14,6 +14,7 @@ class TrainingOrRelaxationScreen
   
   void render()
   {
+    backOver = false;
     relaxationColor = color(100);
     relaxationHighlight = color(200);
     trainingColor = color(100);

@@ -52,6 +52,9 @@ void draw() {
     start_screen.render();
   } 
   if (screen2 == true) {
+    if(screen1 ==true){
+      screen1 = false;
+    }
     training_or_relaxation_screen.render();
   }
   if (back_screen1 == true)
@@ -94,7 +97,7 @@ void mousePressed() {
     screen2 = false;
     screen_training = false;
     screen_relaxation = false;
-    back_screen1 = true;
+    back_screen1 = false;
   }
   
   println("screen1 ",screen1);
