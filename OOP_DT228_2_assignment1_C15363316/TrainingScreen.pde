@@ -69,9 +69,9 @@ class TrainingScreen
     
     fill(0);
     textSize(45);
-    text("Weapons",weaponsX+20,weaponsY+60);
-    text("Combat",combatX+45,combatY+60);
-    text("Missions",missionX+20,missionY+60);
+    text("Weapons",weaponsX+40,weaponsY+60);
+    text("Combat",combatX+60,combatY+60);
+    text("Mission",missionX+60,missionY+60);
     
     textSize(30);
     text("Back",backX+15,backY+35);
