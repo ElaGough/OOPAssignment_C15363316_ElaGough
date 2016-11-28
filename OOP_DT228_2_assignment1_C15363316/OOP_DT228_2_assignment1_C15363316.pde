@@ -99,15 +99,35 @@ void mousePressed() {
   else if (screenID == 3) {
     if (training_screen.weaponsOver == true)
     {
-      
+      screenID = 5;
     }
     if (training_screen.combatOver == true)
     {
-      
+      screenID = 6;
     }
     if (training_screen.missionOver == true)
     {
-      
+      screenID = 7;
+    }
+    if (training_screen.backOver == true)
+    {
+      screenID = 2;
+    }
+  }
+  
+  //relaxation_screen
+  else if (screenID == 4) {
+    if (training_screen. == true)
+    {
+      screenID = 8;
+    }
+    if (training_screen. == true)
+    {
+      screenID = 9;
+    }
+    if (training_screen. == true)
+    {
+      screenID = 10;
     }
     if (training_screen.backOver == true)
     {
