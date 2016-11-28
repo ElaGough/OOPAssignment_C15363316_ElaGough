@@ -50,22 +50,19 @@ void draw() {
   callstars();
   callheart();
   
-  if (screen1 == true && screen2 == false && screen_training == false) { 
+  if (screen1 == true) { 
     start_screen.render();
     println("screen1 working");
   } 
-  if (screen1 == true && screen2 == true && screen_training == false) { 
+  if (screen2 == true) { 
     screen1 =  false;
     training_or_relaxation_screen.render();
-    println("screen2 working back");
-  } 
-  if (screen2 == true && screen1 == false && screen_training == false) {
-    training_or_relaxation_screen.render();
     println("screen2 working");
-  }
-  if (screen_training == true && screen2 == false && screen1 == false)
+  } 
+  if (screen_training == true)
   {
     training_screen.render();
+    println("training_screen working");
   }
 }
 
@@ -73,9 +70,11 @@ void draw() {
 //mousePressed
 void mousePressed() {
   //start_screen
+  //end button
   if (start_screen.endOver == true) {
     System.exit(0);
   }
+  //start button
   else if (start_screen.startOver == true) {
     screen1 = false;
     screen2 = true;
@@ -84,21 +83,24 @@ void mousePressed() {
   }
   
   //training_or_relaxation_screen
+  //training button
   else if (training_or_relaxation_screen.trainingOver == true) {
     screen1 = false;
     screen2 = false;
     screen_training = true;
     screen_relaxation = false;
   }
+  //relaxation button
   else if (training_or_relaxation_screen.relaxationOver == true) {
     screen1 = false;
     screen2 = false;
     screen_training = false;
     screen_relaxation = true;
   }
+  //back button
   if (training_or_relaxation_screen.backOver == true) {
     screen1 = true;
-    screen2 = true;
+    screen2 = false;
     screen_training = false;
     screen_relaxation = false;
   }
