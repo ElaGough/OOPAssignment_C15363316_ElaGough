@@ -19,6 +19,7 @@ boolean screen_relaxation = false;
 
 ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
 
+//setup
 void setup() {
   size(1000, 600);
   
@@ -38,7 +39,7 @@ void setup() {
   training_screen = new TrainingScreen();
 }
 
-
+//draw
 void draw() {
   background(20);
   //background(255);
@@ -51,16 +52,16 @@ void draw() {
   
   if (screen1 == true && screen2 == false) { 
     start_screen.render();
+    println("screen1 working");
   } 
   else if (screen1 == true && screen2 == true) { 
     screen1 =  false;
     training_or_relaxation_screen.render();
+    println("screen2 working back");
   } 
-  else if (screen2 == true) {
-    if(screen1 ==true){
-      screen1 = false;
-    }
+  else if (screen2 == true && screen1 == false) {
     training_or_relaxation_screen.render();
+    println("screen2 working");
   }
   else if (screen_training == true)
   {
@@ -69,6 +70,7 @@ void draw() {
 }
 
 
+//mousePressed
 void mousePressed() {
   //start_screen
   if (start_screen.endOver == true) {
@@ -101,6 +103,7 @@ void mousePressed() {
     screen_relaxation = false;
   }
   
+  //checking booleans
   println("screen1 ",screen1);
   println("screen2 ",screen2);
   println("screen_training ",screen_training);
