@@ -1,4 +1,4 @@
-class TrainingScreen
+class TrainingScreen extends ButtonColours
 {
   float weaponsX, weaponsY;      // Position of start button
   float combatX, combatY;      // Position of end button
@@ -8,8 +8,7 @@ class TrainingScreen
   int combatSize = 300;     // Diameter of combat button
   int missionSize = 300;     // Diameter of combat button
   int backSize = 100;
-  color weaponsColor, combatColor, missionColor, backColor; //normal colour
-  color weaponsHighlight, combatHighlight, missionHighlight, backHighlight; //highlighted colour when mouse hovers over button
+  
   boolean weaponsOver = false;
   boolean combatOver = false;
   boolean missionOver = false;
@@ -18,14 +17,6 @@ class TrainingScreen
   void render()
   {
     backOver = false;
-    weaponsColor = color(100);
-    weaponsHighlight = color(200);
-    combatColor = color(100);
-    combatHighlight = color(200);
-    missionColor = color(100);
-    missionHighlight = color(200);
-    backColor = color(100);
-    backHighlight = color(200);
     weaponsX = -150;
     weaponsY = -150;
     combatX = -460;
@@ -40,30 +31,30 @@ class TrainingScreen
     fill(100);
     
     if (weaponsOver) {
-      fill(weaponsHighlight);
+      fill(Highlight);
     } else {
-      fill(weaponsColor);
+      fill(Color);
     }
     rect(weaponsX,weaponsY,weaponsSize,100,40);  //rect(x1,y1,width,height,corners_ratio);
     
     if (combatOver) {
-      fill(combatHighlight);
+      fill(Highlight);
     } else {
-      fill(combatColor);
+      fill(Color);
     }
     rect(combatX,combatY,combatSize,100,40);
     
     if (missionOver) {
-      fill(missionHighlight);
+      fill(Highlight);
     } else {
-      fill(missionColor);
+      fill(Color);
     }
     rect(missionX,missionY,missionSize,100,40);
     
     if (backOver) {
-      fill(backHighlight);
+      fill(Highlight);
     } else {
-      fill(backColor);
+      fill(Color);
     }
     rect(backX,backY,backSize,50,40);
     
