@@ -53,7 +53,7 @@ void draw() {
   if (screen1 == true) { 
     start_screen.render();
   } 
-  if (screen2 == true) {
+  else if (screen2 == true) {
     if(screen1 ==true){
       screen1 = false;
     }
@@ -65,7 +65,7 @@ void draw() {
     back_screen1 = false;
     start_screen.render();
   }*/
-  if (screen_training == true)
+  else if (screen_training == true)
   {
     training_screen.render();
   }
@@ -77,7 +77,7 @@ void mousePressed() {
   if (start_screen.endOver == true) {
     System.exit(0);
   }
-  if (start_screen.startOver == true) {
+  else if (start_screen.startOver == true) {
     screen1 = false;
     screen2 = true;
     screen_training = false;
@@ -86,21 +86,21 @@ void mousePressed() {
   }
   
   //training_or_relaxation_screen
-  if (training_or_relaxation_screen.trainingOver == true) {
+  else if (training_or_relaxation_screen.trainingOver == true) {
     screen1 = false;
     screen2 = false;
     screen_training = true;
     screen_relaxation = false;
     //back_screen1 = false;
   }
-  if (training_or_relaxation_screen.relaxationOver == true) {
+  else if (training_or_relaxation_screen.relaxationOver == true) {
     screen1 = false;
     screen2 = false;
     screen_training = false;
     screen_relaxation = true;
     //back_screen1 = false;
   }
-  if (training_or_relaxation_screen.backOver == true) {
+  else if (training_or_relaxation_screen.backOver == true) {
     screen1 = true;
     screen2 = false;
     screen_training = false;
