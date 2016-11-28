@@ -1,4 +1,4 @@
-class StartScreen
+class StartScreen extends ButtonColours
 {
   float startX, startY;      // Position of start button
   float endX, endY;      // Position of end button
@@ -6,7 +6,6 @@ class StartScreen
   int endSize = 300;     // Diameter of end button
   color startColor, endColor, baseColor; //normal colour
   color startHighlight, endHighlight; //highlighted colour when mouse hovers over button
-  color currentColor;
   boolean startOver = false;
   boolean endOver = false;
   

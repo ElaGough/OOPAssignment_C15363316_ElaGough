@@ -71,10 +71,10 @@ void mousePressed() {
   //start_screen
   //end button
   if (screenID == 1) {
-    if(start_screen.endOver == true){
+    if(start_screen.endOver == true) {
       System.exit(0);
     }
-    if(start_screen.startOver == true){
+    if(start_screen.startOver == true) {
       screenID = 2;
     }
   }
@@ -98,44 +98,36 @@ void mousePressed() {
   //training_screen
   else if (screenID == 3) {
     //weapons button
-    if (training_screen.weaponsOver == true)
-    {
+    if (training_screen.weaponsOver == true) {
       screenID = 5;
     }
     //combat button
-    if (training_screen.combatOver == true)
-    {
+    if (training_screen.combatOver == true) {
       screenID = 6;
     }
     //mmission button
-    if (training_screen.missionOver == true)
-    {
+    if (training_screen.missionOver == true) {
       screenID = 7;
     }
     //back button to screen 2
-    if (training_screen.backOver == true)
-    {
+    if (training_screen.backOver == true) {
       screenID = 2;
     }
   }
   
   /*//relaxation_screen
   else if (screenID == 4) {
-    if (training_screen. == true)
-    {
+    if (training_screen. == true) {
       screenID = 8;
     }
-    if (training_screen. == true)
-    {
+    if (training_screen. == true) {
       screenID = 9;
     }
-    if (training_screen. == true)
-    {
+    if (training_screen. == true){
       screenID = 10;
     }
     //back button to screen 2
-    if (training_screen.backOver == true)
-    {
+    if (training_screen.backOver == true) {
       screenID = 2;
     }
   }*/
