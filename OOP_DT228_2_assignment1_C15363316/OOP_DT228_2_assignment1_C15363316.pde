@@ -16,6 +16,7 @@ boolean screen1 = true; //StartScreen
 boolean screen2 = false; //TrainingOrRelaxationScreen
 boolean screen_training = false; //Training Screen
 boolean screen_relaxation = false; //RelaxationScreen
+boolean back_screen1 = false;
 
 ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
 
@@ -50,21 +51,25 @@ void draw() {
   callstars();
   callheart();
   
-  if (screen1 == true) { 
+  //screen1
+  if (screen1 == true && screen2 == false && screen_training == false && screen_relaxation == false) { 
     start_screen.render();
     //println("screen1 working");
   } 
-  if (screen2 == true) { 
-    //screen1 =  false;
-    if(screen1 == true){
-      screen1 = false;
-    }
+  //screen2
+  if (screen1 == false && screen2 == true && screen_training == false && screen_relaxation == false) { 
     training_or_relaxation_screen.render();
     //println("screen2 working");
   } 
-  if (screen_training == true)
+  ///back_screen1
+  if (screen1 == true && back_screen1 == true) {
+    while(start_screen.startOver == true) {
+      screen1 = false;
+    }
+  }
+  //screen_training
+  if (screen1 == false && screen2 == false && screen_training == true && screen_relaxation == false)
   {
-    //screen2 = false;
     training_screen.render();
     //println("training_screen working");
   }
@@ -79,7 +84,7 @@ void mousePressed() {
     System.exit(0);
   }
   //start button
-  else if (start_screen.startOver == true) {
+  if (start_screen.startOver == true) {
     screen1 = false;
     screen2 = true;
     screen_training = false;
@@ -107,6 +112,7 @@ void mousePressed() {
     screen2 = false;
     screen_training = false;
     screen_relaxation = false;
+    back_screen1 = true;
   }
   
   //checking booleans
