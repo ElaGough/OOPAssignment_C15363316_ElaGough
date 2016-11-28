@@ -89,7 +89,7 @@ void mousePressed() {
     if (training_or_relaxation_screen.relaxationOver == true) {
       screenID = 4;
     }
-    //back button for screen 1
+    //back button to screen 1
     if (training_or_relaxation_screen.backOver == true) {
       screenID = 1;
     }
@@ -97,25 +97,29 @@ void mousePressed() {
     
   //training_screen
   else if (screenID == 3) {
+    //weapons button
     if (training_screen.weaponsOver == true)
     {
       screenID = 5;
     }
+    //combat button
     if (training_screen.combatOver == true)
     {
       screenID = 6;
     }
+    //mmission button
     if (training_screen.missionOver == true)
     {
       screenID = 7;
     }
+    //back button to screen 2
     if (training_screen.backOver == true)
     {
       screenID = 2;
     }
   }
   
-  //relaxation_screen
+  /*//relaxation_screen
   else if (screenID == 4) {
     if (training_screen. == true)
     {
@@ -129,10 +133,11 @@ void mousePressed() {
     {
       screenID = 10;
     }
+    //back button to screen 2
     if (training_screen.backOver == true)
     {
       screenID = 2;
     }
-  }
+  }*/
   
  }//end mousePressed()
