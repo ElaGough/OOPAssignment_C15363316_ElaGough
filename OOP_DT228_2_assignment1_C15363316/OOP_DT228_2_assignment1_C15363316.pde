@@ -12,10 +12,7 @@ StartScreen start_screen;
 TrainingOrRelaxationScreen training_or_relaxation_screen;
 TrainingScreen training_screen;
 
-boolean screen1 = true; //StartScreen
-boolean screen2 = false; //TrainingOrRelaxationScreen
-boolean screen_training = false; //Training Screen
-boolean screen_relaxation = false; //RelaxationScreen
+int screenID = 1;
 
 ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
 
@@ -51,17 +48,17 @@ void draw() {
   callheart();
   
   //screen1
-  if (screen1 == true && screen2 == false && screen_training == false && screen_relaxation == false) { 
+  if (screenID == 1 ) { 
     start_screen.render();
-    println("screen1 working");
+    //println("screen1 working");
   } 
   //screen2
-  if (screen1 == false && screen2 == true && screen_training == false && screen_relaxation == false) { 
+  if (screenID == 2) { 
     training_or_relaxation_screen.render();
     //println("screen2 working");
   } 
   //screen_training
-  if (screen1 == false && screen2 == false && screen_training == true && screen_relaxation == false)
+  if (screenID == 3)
   {
     training_screen.render();
     //println("training_screen working");
@@ -73,44 +70,49 @@ void draw() {
 void mousePressed() {
   //start_screen
   //end button
-  if (start_screen.endOver == true) {
-    System.exit(0);
+  if (screenID == 1) {
+    if(start_screen.endOver == true){
+      System.exit(0);
+    }
+    if(start_screen.startOver == true){
+      screenID = 2;
+    }
   }
-  //start button
-  if (start_screen.startOver == true) {
-    screen1 = false;
-    screen2 = true;
-    screen_training = false;
-    screen_relaxation = false;
-  }
-  
+
   //training_or_relaxation_screen
-  //training button
-  if (training_or_relaxation_screen.trainingOver == true) {
-    screen1 = false;
-    screen2 = false;
-    screen_training = true;
-    screen_relaxation = false;
+  else if (screenID == 2) {
+    //training button
+    if (training_or_relaxation_screen.trainingOver == true) {
+      screenID = 3;
+    }
+    //relaxation button
+    if (training_or_relaxation_screen.relaxationOver == true) {
+      screenID = 4;
+    }
+    //back button for screen 1
+    if (training_or_relaxation_screen.backOver == true) {
+      screenID = 1;
+    }
   }
-  //relaxation button
-  if (training_or_relaxation_screen.relaxationOver == true) {
-    screen1 = false;
-    screen2 = false;
-    screen_training = false;
-    screen_relaxation = true;
-  }
-  //back button for screen 1
-  if (training_or_relaxation_screen.backOver == true) {
-    screen1 = true;
-    screen2 = false;
-    screen_training = false;
-    screen_relaxation = false;
+    
+  //training_screen
+  else if (screenID == 3) {
+    if (training_screen.weaponsOver == true)
+    {
+      
+    }
+    if (training_screen.combatOver == true)
+    {
+      
+    }
+    if (training_screen.missionOver == true)
+    {
+      
+    }
+    if (training_screen.backOver == true)
+    {
+      screenID = 2;
+    }
   }
   
-  //checking booleans
-  println("screen1 ",screen1);
-  println("screen2 ",screen2);
-  println("screen_training ",screen_training);
-  println("screen_relaxation ",screen_relaxation);
-  println("\n");
  }//end mousePressed()
