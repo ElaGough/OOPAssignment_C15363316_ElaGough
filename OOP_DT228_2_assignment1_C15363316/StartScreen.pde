@@ -4,17 +4,11 @@ class StartScreen extends ButtonColours
   float endX, endY;      // Position of end button
   int startSize = 300;     // Diameter of start button
   int endSize = 300;     // Diameter of end button
-  color startColor, endColor, baseColor; //normal colour
-  color startHighlight, endHighlight; //highlighted colour when mouse hovers over button
   boolean startOver = false;
   boolean endOver = false;
   
   void render()
   {
-    startColor = color(100);
-    startHighlight = color(200);
-    endColor = color(100);
-    endHighlight = color(200);
     startX = 150;
     startY = 150;
     endX = -450;
@@ -25,16 +19,16 @@ class StartScreen extends ButtonColours
     fill(100);
     
     if (startOver) {
-      fill(startHighlight);
+      fill(Highlight);
     } else {
-      fill(startColor);
+      fill(Color);
     }
     rect(startX,startY,startSize,100,40);  //rect(x1,y1,width,height,corners_ratio);
     
     if (endOver) {
-      fill(endHighlight);
+      fill(Highlight);
     } else {
-      fill(endColor);
+      fill(Color);
     }
     rect(endX,endY,endSize,100,40);
     

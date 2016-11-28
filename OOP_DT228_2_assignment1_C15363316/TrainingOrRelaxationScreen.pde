@@ -1,4 +1,4 @@
-class TrainingOrRelaxationScreen
+class TrainingOrRelaxationScreen extends ButtonColours
 {
   float relaxationX, relaxationY;      // Position of start button
   float trainingX, trainingY;      // Position of end button
@@ -6,8 +6,6 @@ class TrainingOrRelaxationScreen
   int relaxationSize = 300;     // Diameter of start button
   int trainingSize = 300;     // Diameter of end button
   int backSize = 100;
-  color relaxationColor, trainingColor, backColor; //normal colour
-  color relaxationHighlight, trainingHighlight, backHighlight; //highlighted colour when mouse hovers over button
   boolean relaxationOver = false;
   boolean trainingOver = false;
   boolean backOver = false;
@@ -15,12 +13,6 @@ class TrainingOrRelaxationScreen
   void render()
   {
     backOver = false;
-    relaxationColor = color(100);
-    relaxationHighlight = color(200);
-    trainingColor = color(100);
-    trainingHighlight = color(200);
-    backColor = color(100);
-    backHighlight = color(200);
     relaxationX = 150;
     relaxationY = -150;
     trainingX = -450;
@@ -33,23 +25,23 @@ class TrainingOrRelaxationScreen
     fill(100);
     
     if (relaxationOver) {
-      fill(relaxationHighlight);
+      fill(Highlight);
     } else {
-      fill(relaxationColor);
+      fill(Color);
     }
     rect(relaxationX,relaxationY,relaxationSize,100,40);  //rect(x1,y1,width,height,corners_ratio);
     
     if (trainingOver) {
-      fill(trainingHighlight);
+      fill(Highlight);
     } else {
-      fill(trainingColor);
+      fill(Color);
     }
     rect(trainingX,trainingY,trainingSize,100,40);
     
     if (backOver) {
-      fill(backHighlight);
+      fill(Highlight);
     } else {
-      fill(backColor);
+      fill(Color);
     }
     rect(backX,backY,backSize,50,40);
     
