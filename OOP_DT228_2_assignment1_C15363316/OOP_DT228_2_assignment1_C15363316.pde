@@ -55,15 +55,18 @@ void draw() {
     //println("screen1 working");
   } 
   if (screen2 == true) { 
-    screen1 =  false;
+    //screen1 =  false;
+    if(screen1 == true){
+      screen1 = false;
+    }
     training_or_relaxation_screen.render();
     //println("screen2 working");
   } 
   if (screen_training == true)
   {
-    screen2 = false;
+    //screen2 = false;
     training_screen.render();
-    println("training_screen working");
+    //println("training_screen working");
   }
 }
 
@@ -85,14 +88,14 @@ void mousePressed() {
   
   //training_or_relaxation_screen
   //training button
-  else if (training_or_relaxation_screen.trainingOver == true) {
+  if (training_or_relaxation_screen.trainingOver == true) {
     screen1 = false;
     screen2 = false;
     screen_training = true;
     screen_relaxation = false;
   }
   //relaxation button
-  else if (training_or_relaxation_screen.relaxationOver == true) {
+  if (training_or_relaxation_screen.relaxationOver == true) {
     screen1 = false;
     screen2 = false;
     screen_training = false;
