@@ -53,10 +53,12 @@ class StartScreen
       if ( overEnd(endX + width /2 , endY + height /2, endSize, endSize/3) ) {
         endOver = true;
         startOver = false;
-      } else if ( overStart(startX + width / 2, startY + height /2 , startSize, startSize/3) ) {
+      } 
+      else if ( overStart(startX + width / 2, startY + height /2 , startSize, startSize/3) ) {
         startOver = true;
         endOver = false;
-      } else {
+      } 
+      else {
         endOver = startOver = false;
       }
     }//end update()
