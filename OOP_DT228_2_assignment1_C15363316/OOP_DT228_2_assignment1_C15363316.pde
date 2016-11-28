@@ -14,8 +14,8 @@ TrainingScreen training_screen;
 
 boolean screen1 = true; //StartScreen
 boolean screen2 = false; //TrainingOrRelaxationScreen
-boolean screen_training = false;
-boolean screen_relaxation = false;
+boolean screen_training = false; //Training Screen
+boolean screen_relaxation = false; //RelaxationScreen
 
 ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
 
