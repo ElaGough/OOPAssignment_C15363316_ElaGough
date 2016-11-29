@@ -1,16 +1,18 @@
-//OOP Assignment - Holodeck
+//OOP Assignment - Holodeck UI
 //DT228-2
 //Ela Gough C15363316
 
-import processing.sound.*;
+import ddf.minim.*;
 
-SoundFile BootySwing;
+Minim minim;
+AudioPlayer StarTrekMelody;
 
 Heart heart; //declares heart
 Stars stars; //declares stars
 StartScreen start_screen;
 TrainingOrRelaxationScreen training_or_relaxation_screen;
 TrainingScreen training_screen;
+RelaxationScreen relaxation_screen;
 
 int screenID = 1;
 
@@ -25,15 +27,18 @@ void setup() {
   monta = createFont("Montalban Condensed Bold.otf",100);
   textFont(monta);
   
-  //background sound
-  BootySwing = new SoundFile(this, "Parov Stelar - Booty Swing.mp3");
-  BootySwing.play();
+  //background sound looping
+  minim = new Minim(this);
+  StarTrekMelody = minim.loadFile("Star Trek- The Next Generation theme (HQ).mp3",2048);
+  StarTrekMelody.loop();
   
+  //initilasing classes
   heart = new Heart(); //initilases heart
   stars = new Stars(); //initilases stars
   start_screen = new StartScreen();
   training_or_relaxation_screen = new TrainingOrRelaxationScreen();
   training_screen = new TrainingScreen();
+  relaxation_screen = new RelaxationScreen();
 }
 
 //draw
@@ -61,6 +66,12 @@ void draw() {
   if (screenID == 3)
   {
     training_screen.render();
+    //println("training_screen working");
+  }
+  //screen_training
+  if (screenID == 4)
+  {
+    relaxation_screen.render();
     //println("training_screen working");
   }
 }
@@ -115,21 +126,21 @@ void mousePressed() {
     }
   }
   
-  /*//relaxation_screen
+  //relaxation_screen
   else if (screenID == 4) {
-    if (training_screen. == true) {
+    if (relaxation_screen.weaponsOver == true) {
       screenID = 8;
     }
-    if (training_screen. == true) {
+    if (relaxation_screen.combatOver == true) {
       screenID = 9;
     }
-    if (training_screen. == true){
+    if (relaxation_screen.missionOver == true){
       screenID = 10;
     }
     //back button to screen 2
-    if (training_screen.backOver == true) {
+    if (relaxation_screen.backOver == true) {
       screenID = 2;
     }
-  }*/
+  }
   
  }//end mousePressed()

@@ -1,4 +1,4 @@
-class TrainingScreen extends ButtonColours
+class RelaxationScreen extends ButtonColours
 {
   float weaponsX, weaponsY;      // Position of start button
   float combatX, combatY;      // Position of end button
@@ -60,18 +60,18 @@ class TrainingScreen extends ButtonColours
     
     fill(0);
     textSize(45);
-    text("Weapons",weaponsX+40,weaponsY+60);
-    text("Combat",combatX+60,combatY+60);
-    text("Mission",missionX+60,missionY+60);
+    text("Risa",weaponsX+90,weaponsY+60);
+    text("Ba'ku",combatX+75,combatY+60);
+    text("Eden",missionX+90,missionY+60);
     
     textSize(30);
     text("Back",backX+15,backY+35);
     
     fill(200);
     textSize(70);
-    text("Training",-150,-250);
+    text("Relaxation",-210,-250);
     textSize(40);
-    text("a healthy body is a healthy mind",-340,-170);
+    text("a relaxed mind is a productive mind",-380,-170);
   }//end render()
 
   
@@ -111,7 +111,7 @@ class TrainingScreen extends ButtonColours
     } else {
       return false;
     }
-  }//end of overWeapons()
+  }//end of overStart()
   
   boolean overCombat(float x, float y, float w, float h)  {
     if (mouseX >= x && mouseX <= x+w && 
@@ -120,7 +120,7 @@ class TrainingScreen extends ButtonColours
     } else {
       return false;
     }
-  }//end of overCombat()
+  }//end of overEnd()
   
   boolean overMission(float x, float y, float w, float h)  {
     if (mouseX >= x && mouseX <= x+w && 
@@ -129,7 +129,7 @@ class TrainingScreen extends ButtonColours
     } else {
       return false;
     }
-  }//end of overMission()
+  }//end of overEnd()
   
   boolean overBack(float x, float y, float w, float h)  {
     if (mouseX >= x && mouseX <= x+w && 
@@ -140,4 +140,4 @@ class TrainingScreen extends ButtonColours
     }
   }//end of overBack()
   
-}//end TrainingScreen
+}//end RelaxationScreen

@@ -55,7 +55,7 @@ class TrainingOrRelaxationScreen extends ButtonColours
     
     fill(200);
     textSize(70);
-    text("Choose an option",-340,-200);
+    text("Choose an option",-320,-200);
   }//end render()
 
   
