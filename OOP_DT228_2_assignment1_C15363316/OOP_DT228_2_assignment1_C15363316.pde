@@ -22,6 +22,7 @@ MissionScreen mission_screen;
 BakuScreen baku_screen;
 RisaScreen risa_screen;
 EdenScreen eden_screen;
+InfoScreen info_screen;
 
 //used to navigate sscreens
 int screenID = 1;
@@ -66,6 +67,7 @@ void setup() {
   baku_screen = new BakuScreen();
   risa_screen = new RisaScreen();
   eden_screen = new EdenScreen();
+  info_screen = new InfoScreen();
   
 }
 
@@ -127,7 +129,10 @@ void draw() {
   {
     eden_screen.render();
   }
-  
+  if (screenID == 11)
+  {
+    info_screen.render();
+  }
 }
 
 
@@ -141,6 +146,9 @@ void mousePressed() {
     }
     if(start_screen.startOver == true) {
       screenID = 2;
+    }
+    if(start_screen.infoOver == true) {
+      screenID = 11;
     }
   }
 
@@ -257,5 +265,13 @@ void mousePressed() {
     }
   }
   
+  //info_screen
+  else if (screenID == 11)
+  {
+    //back to start_screen
+    if (info_screen.backOver == true) {
+      screenID = 1;
+    }
+  }
   
  }//end mousePressed()
