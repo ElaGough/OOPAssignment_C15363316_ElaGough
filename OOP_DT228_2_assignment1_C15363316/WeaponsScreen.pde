@@ -1,4 +1,4 @@
-class CombatScreen extends ButtonColours
+class WeaponsScreen extends ButtonColours
 {
   float backX, backY;
   int backSize = 100;

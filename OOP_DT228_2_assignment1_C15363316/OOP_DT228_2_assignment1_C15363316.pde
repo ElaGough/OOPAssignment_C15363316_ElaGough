@@ -7,6 +7,7 @@ import ddf.minim.*;
 
 Minim minim;
 AudioPlayer StarTrekMelody;
+AudioPlayer Door;
 
 //declares classes
 Heart heart; //declares heart
@@ -41,6 +42,10 @@ void setup() {
   minim = new Minim(this);
   StarTrekMelody = minim.loadFile("Star Trek- The Next Generation theme (HQ).mp3",2048);
   StarTrekMelody.loop();
+  
+  //door sound
+  minim = new Minim(this);
+  Door = minim.loadFile("Car Door Close Outside-SoundBible.com-1122981889.wav",2048);
   
   //initilasing classes
   heart = new Heart(); //initilases heart
