@@ -27,7 +27,7 @@ void setup() {
   monta = createFont("Montalban Condensed Bold.otf",100);
   textFont(monta);
   
-  //background sound looping
+  //background sound looping - flow state
   minim = new Minim(this);
   StarTrekMelody = minim.loadFile("Star Trek- The Next Generation theme (HQ).mp3",2048);
   StarTrekMelody.loop();
