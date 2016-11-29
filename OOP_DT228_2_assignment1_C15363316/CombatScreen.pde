@@ -5,7 +5,6 @@ class CombatScreen extends ButtonColours
   boolean backOver = false;
   
   
-  
   void render()
   {
     backX = 390;
@@ -21,6 +20,10 @@ class CombatScreen extends ButtonColours
       fill(Color);
     }
     rect(backX,backY,backSize,50,40);
+    
+    fill(0);
+    textSize(30);
+    text("Back",backX+15,backY+35);
   }
   
   void update() {
