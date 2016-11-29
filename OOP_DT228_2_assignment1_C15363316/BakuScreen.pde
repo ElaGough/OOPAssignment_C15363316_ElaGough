@@ -30,7 +30,7 @@ class BakuScreen extends ButtonColours
     textSize(70);
     text("The Planet Ba'ku",-340,-70);
     stroke(200);
-    line(-340, -50, 320, -50);
+    line(-340, -50, 340, -50);
     textSize(45);
     text("Program may take a moment to load",-450,50);    
     text("Please proceed when door opens",-420,150);

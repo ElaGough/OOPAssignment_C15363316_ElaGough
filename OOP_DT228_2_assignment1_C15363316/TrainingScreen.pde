@@ -9,6 +9,7 @@ class TrainingScreen extends ButtonColours
   int missionSize = 300;     // Diameter of combat button
   int backSize = 100;
   
+  //boolean for buttons
   boolean weaponsOver = false;
   boolean combatOver = false;
   boolean missionOver = false;
@@ -71,7 +72,7 @@ class TrainingScreen extends ButtonColours
     textSize(70);
     text("Training",-150,-250);
     textSize(40);
-    text("a healthy body is a healthy mind",-340,-170);
+    text("a healthy body is a healthy mind",-350,-170);
   }//end render()
 
   

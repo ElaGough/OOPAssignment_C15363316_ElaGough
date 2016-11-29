@@ -68,6 +68,11 @@ class RelaxationScreen extends ButtonColours
     text("Back",backX+15,backY+35);
     
     fill(200);
+    textSize(15);
+    text("Risa is a planet with many tropical\nluxury resorts, miles of pristine\nbeaches, steam pools and\nsubterranean gardens... this planet\nis also a no weapons zone.",risaX+10,risaY+140);
+    text("Eden is a tropical paradise floating\nthrough space, and is an incredibly\npeaceful planet. That's largely\nbecause it has no native animal\nspecies, including humanoids. The local\ntrees, grasses, and other flora are\nstunning to look at.", edenX+10, edenY+140);
+    text("Ba'ku is a lush planet with rolling\nhills, sparkling lakes, and exciting\nlocal wildlife. But its most\nimportant feature is one that's not\non the surface... .. Metaphasic rings\nthat regenerate health give\ninhabitants eternal life to the\ninhabitance.",bakuX+10,bakuY+140);
+    
     textSize(70);
     text("Relaxation",-210,-250);
     textSize(40);
