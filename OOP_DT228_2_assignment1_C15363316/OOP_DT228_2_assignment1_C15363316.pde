@@ -32,6 +32,7 @@ ArrayList<Stars> starList = new ArrayList<Stars>();
 
 //setup
 void setup() {
+  //fullScreen();
   size(1000, 600);
   
   //setting font

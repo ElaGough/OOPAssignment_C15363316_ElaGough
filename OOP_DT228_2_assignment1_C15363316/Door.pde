@@ -1,3 +1,5 @@
+//play Door sound
+
 void Door() {
   if ( Door.isPlaying() ) {
     Door.pause();

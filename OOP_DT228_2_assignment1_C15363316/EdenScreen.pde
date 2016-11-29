@@ -2,9 +2,7 @@ class EdenScreen extends ButtonColours
 {
   float backX, backY;
   int backSize = 100;
-  boolean backOver = false;
-  int num;
-  int i;
+  boolean backOver = false; //hovering over button
   
   
   void render()
