@@ -128,13 +128,13 @@ void mousePressed() {
   
   //relaxation_screen
   else if (screenID == 4) {
-    if (relaxation_screen.weaponsOver == true) {
+    if (relaxation_screen.risaOver == true) {
       screenID = 8;
     }
-    if (relaxation_screen.combatOver == true) {
+    if (relaxation_screen.bakuOver == true) {
       screenID = 9;
     }
-    if (relaxation_screen.missionOver == true){
+    if (relaxation_screen.edenOver == true){
       screenID = 10;
     }
     //back button to screen 2
