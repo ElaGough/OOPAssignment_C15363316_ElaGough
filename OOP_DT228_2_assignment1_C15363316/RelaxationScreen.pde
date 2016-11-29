@@ -30,6 +30,7 @@ class RelaxationScreen extends ButtonColours
     stroke(0);
     fill(100);
     
+    //highlighting button
     if (risaOver) {
       fill(Highlight);
     } else {
@@ -58,6 +59,7 @@ class RelaxationScreen extends ButtonColours
     }
     rect(backX,backY,backSize,50,40);
     
+    //text
     fill(0);
     textSize(45);
     text("Risa",risaX+95,risaY+60);

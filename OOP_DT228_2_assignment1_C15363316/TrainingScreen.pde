@@ -31,6 +31,7 @@ class TrainingScreen extends ButtonColours
     stroke(0);
     fill(100);
     
+    //highlighting button
     if (weaponsOver) {
       fill(Highlight);
     } else {
@@ -59,6 +60,7 @@ class TrainingScreen extends ButtonColours
     }
     rect(backX,backY,backSize,50,40);
     
+    //text
     fill(0);
     textSize(45);
     text("Weapons",weaponsX+40,weaponsY+60);

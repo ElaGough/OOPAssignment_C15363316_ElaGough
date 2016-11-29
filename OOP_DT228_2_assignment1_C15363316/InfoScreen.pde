@@ -15,6 +15,7 @@ class InfoScreen extends ButtonColours
     stroke(0);
     fill(100);
     
+    //highlighting button
     if (backOver) {
       fill(Highlight);
     } else {
@@ -22,6 +23,7 @@ class InfoScreen extends ButtonColours
     }
     rect(backX,backY,backSize,50,40);
     
+    //text
     fill(200);
     textSize(80);
     text("The Holodeck",-310,-170);

@@ -15,6 +15,7 @@ class RisaScreen extends ButtonColours
     stroke(0);
     fill(100);
     
+    //highlighting button
     if (backOver) {
       fill(Highlight);
     } else {
@@ -22,6 +23,7 @@ class RisaScreen extends ButtonColours
     }
     rect(backX,backY,backSize,50,40);
     
+    //text
     fill(200);
     textSize(60);
     text("You have chosen:",-280,-170);

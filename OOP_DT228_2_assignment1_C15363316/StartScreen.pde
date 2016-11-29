@@ -23,6 +23,7 @@ class StartScreen extends ButtonColours
     stroke(0);
     fill(100);
     
+    //highlighting button
     if (startOver) {
       fill(Highlight);
     } else {
@@ -44,6 +45,7 @@ class StartScreen extends ButtonColours
     }
     rect(infoX,infoY,infoSize,50,40);
     
+    //text
     fill(0);
     textSize(90);
     text("Start",167,230);

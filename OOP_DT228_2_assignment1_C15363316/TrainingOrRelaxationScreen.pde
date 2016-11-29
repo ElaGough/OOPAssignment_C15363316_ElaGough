@@ -24,6 +24,7 @@ class TrainingOrRelaxationScreen extends ButtonColours
     stroke(0);
     fill(100);
     
+    //highlighting button
     if (relaxationOver) {
       fill(Highlight);
     } else {
@@ -45,6 +46,7 @@ class TrainingOrRelaxationScreen extends ButtonColours
     }
     rect(backX,backY,backSize,50,40);
     
+    //text
     fill(0);
     textSize(45);
     text("Relaxation",relaxationX+20,relaxationY+60);

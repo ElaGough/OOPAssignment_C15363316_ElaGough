@@ -5,6 +5,7 @@
 //inport library for music
 import ddf.minim.*;
 
+//declare music
 Minim minim;
 AudioPlayer StarTrekMelody;
 AudioPlayer Door;
@@ -40,10 +41,10 @@ void setup() {
   monta = createFont("Montalban Condensed Bold.otf",100);
   textFont(monta);
   
-  //background sound looping
+  //background sound looping (initilisation)
   minim = new Minim(this);
   StarTrekMelody = minim.loadFile("Star Trek- The Next Generation theme (HQ).mp3",2048);
-  if ( StarTrekMelody == null) {
+  if ( StarTrekMelody == null) { //error checking
     println("Didn't get StarTrekMelody");
   }
   StarTrekMelody.loop();
@@ -51,7 +52,7 @@ void setup() {
   //door sound
   minim = new Minim(this);
   Door = minim.loadFile("Car Door Close Outside-SoundBible.com-1122981889.wav",2048);
-  if ( Door == null) {
+  if ( Door == null) { //error checking
     println("Didn't get Door");
   }
   
@@ -105,31 +106,37 @@ void draw() {
     relaxation_screen.render();
     //println("training_screen working");
   }
-  //
+  //combat_screen
   if (screenID == 5)
   {
     combat_screen.render();
   }
+  //weapons_screen
   if (screenID == 6)
   {
     weapons_screen.render();
   }
+  //mission_screen
   if (screenID == 7)
   {
     mission_screen.render();
   }
+  //risa_screen
   if (screenID == 8)
   {
     risa_screen.render();
   }
+  //baku_screen
   if (screenID == 9)
   {
     baku_screen.render();
   }
+  //eden_screen
   if (screenID == 10)
   {
     eden_screen.render();
   }
+  //info_screen
   if (screenID == 11)
   {
     info_screen.render();
@@ -140,14 +147,16 @@ void draw() {
 //mousePressed
 void mousePressed() {
   //start_screen
-  //end button
   if (screenID == 1) {
+    //end button
     if(start_screen.endOver == true) {
       System.exit(0);
     }
+    //start button
     if(start_screen.startOver == true) {
       screenID = 2;
     }
+    //info button
     if(start_screen.infoOver == true) {
       screenID = 11;
     }
@@ -181,7 +190,7 @@ void mousePressed() {
       screenID = 5;
       Door();
     }
-    //mmission button
+    //mission button
     if (training_screen.missionOver == true) {
       screenID = 7;
       Door();
@@ -194,14 +203,17 @@ void mousePressed() {
   
   //relaxation_screen
   else if (screenID == 4) {
+    //risa button
     if (relaxation_screen.risaOver == true) {
       screenID = 8;
       Door();
     }
+    //baku button
     if (relaxation_screen.bakuOver == true) {
       screenID = 9;
       Door();
     }
+    //eden button
     if (relaxation_screen.edenOver == true){
       screenID = 10;
       Door();
