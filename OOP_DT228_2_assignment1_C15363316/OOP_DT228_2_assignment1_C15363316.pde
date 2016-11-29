@@ -15,6 +15,12 @@ StartScreen start_screen;
 TrainingOrRelaxationScreen training_or_relaxation_screen;
 TrainingScreen training_screen;
 RelaxationScreen relaxation_screen;
+CombatScreen combat_screen;
+//WeaponsScreen weapons_screen;
+//MissionScreen mission_screen;
+//BakuScreen baku_screen;
+//RisaScreen risa_screen;
+//EdenScreen eden_screen;
 
 //used to navigate sscreens
 int screenID = 1;
@@ -43,6 +49,12 @@ void setup() {
   training_or_relaxation_screen = new TrainingOrRelaxationScreen();
   training_screen = new TrainingScreen();
   relaxation_screen = new RelaxationScreen();
+  combat_screen = new CombatScreen();
+  //weapons_screen = new WeaponsScreen();
+  //mission_screen = new MissionScreen();
+  //baku_screen = new BakuScreen();
+  //risa_screen = new RisaScreen();
+  //eden_screen = new EdenScreen();
 }
 
 //draw
@@ -56,28 +68,53 @@ void draw() {
   callstars();
   callheart();
   
-  //screen1
+  //start_screen
   if (screenID == 1 ) { 
     start_screen.render();
     //println("screen1 working");
   } 
-  //screen2
+  //training_or_relaxation_screen
   if (screenID == 2) { 
     training_or_relaxation_screen.render();
     //println("screen2 working");
   } 
-  //screen_training
+  //training_screen
   if (screenID == 3)
   {
     training_screen.render();
     //println("training_screen working");
   }
-  //screen_training
+  //relaxation_screen
   if (screenID == 4)
   {
     relaxation_screen.render();
     //println("training_screen working");
   }
+  //
+  if (screenID == 5)
+  {
+    combat_screen.render();
+  }
+  /*if (screenID == 6)
+  {
+    weapons_screen.render();
+  }
+  if (screenID == 7)
+  {
+    mission_screen.render();
+  }
+  if (screenID == 8)
+  {
+    risa_screen.render();
+  }
+  if (screenID == 9)
+  {
+    baku_screen.render();
+  }
+  if (screenID == 10)
+  {
+    eden_screen.render();
+  }*/
 }
 
 
@@ -104,7 +141,7 @@ void mousePressed() {
     if (training_or_relaxation_screen.relaxationOver == true) {
       screenID = 4;
     }
-    //back button to screen 1
+    //back button to start_screen
     if (training_or_relaxation_screen.backOver == true) {
       screenID = 1;
     }
@@ -114,17 +151,17 @@ void mousePressed() {
   else if (screenID == 3) {
     //weapons button
     if (training_screen.weaponsOver == true) {
-      screenID = 5;
+      screenID = 6;
     }
     //combat button
     if (training_screen.combatOver == true) {
-      screenID = 6;
+      screenID = 5;
     }
     //mmission button
     if (training_screen.missionOver == true) {
       screenID = 7;
     }
-    //back button to screen 2
+    //back button to training_or_relaxation_screen
     if (training_screen.backOver == true) {
       screenID = 2;
     }
@@ -141,10 +178,65 @@ void mousePressed() {
     if (relaxation_screen.edenOver == true){
       screenID = 10;
     }
-    //back button to screen 2
+    //back button to training_or_relaxation_screen
     if (relaxation_screen.backOver == true) {
       screenID = 2;
     }
   }
   
+  //combat_screen
+  else if (screenID == 5)
+  {
+    //back to training_screen
+    if (combat_screen.backOver == true) {
+      screenID = 3;
+    }
+  }
+  
+  /*//weapons_screen
+  else if (screenID == 6)
+  {
+    //back to training_screen
+    if (weapons_screen.backOver == true) {
+      screenID = 3;
+    }
+  }
+  
+  //mission_screen
+  else if (screenID == 7)
+  {
+    //back to training_screen
+    if (mission_screen.backOver == true) {
+      screenID = 3;
+    }
+  }
+  
+  //risa_screen
+  else if (screenID == 8)
+  {
+    //back to relaxation_screen
+    if (risa_screen.backOver == true) {
+      screenID = 4;
+    }
+  }
+  
+  //baku_screen
+  else if (screenID == 9)
+  {
+    //back to relaxation_screen
+    if (baku_screen.backOver == true) {
+      screenID = 4;
+    }
+  }
+  
+  //eden_screen
+  else if (screenID == 10)
+  {
+    //back to relaxation_screen
+    if (eden_screen.backOver == true) {
+      screenID = 4;
+    }
+  }
+  
+  */
  }//end mousePressed()
