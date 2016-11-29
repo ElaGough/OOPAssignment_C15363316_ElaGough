@@ -2,11 +2,13 @@
 //DT228-2
 //Ela Gough C15363316
 
+//inport library for music
 import ddf.minim.*;
 
 Minim minim;
 AudioPlayer StarTrekMelody;
 
+//declares classes
 Heart heart; //declares heart
 Stars stars; //declares stars
 StartScreen start_screen;
@@ -14,9 +16,11 @@ TrainingOrRelaxationScreen training_or_relaxation_screen;
 TrainingScreen training_screen;
 RelaxationScreen relaxation_screen;
 
+//used to navigate sscreens
 int screenID = 1;
 
-ArrayList<Stars> starList = new ArrayList<Stars>(); //array list for stars created so they are infinetly generated
+//array list for stars created so they are infinetly generated
+ArrayList<Stars> starList = new ArrayList<Stars>(); 
 
 //setup
 void setup() {
@@ -27,7 +31,7 @@ void setup() {
   monta = createFont("Montalban Condensed Bold.otf",100);
   textFont(monta);
   
-  //background sound looping - flow state
+  //background sound looping
   minim = new Minim(this);
   StarTrekMelody = minim.loadFile("Star Trek- The Next Generation theme (HQ).mp3",2048);
   StarTrekMelody.loop();
