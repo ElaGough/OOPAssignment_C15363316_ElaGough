@@ -54,6 +54,10 @@ class TrainingOrRelaxationScreen extends ButtonColours
     text("Back",backX+15,backY+35);
     
     fill(200);
+    textSize(15);
+    text("Each member of StarFleet is expected\nto stay in top physical contition. These\nsimulations are to help hone your\nCombat, Weapons and Mission Training.\nRecomended: 3 programs per each Earth\nmonth",trainingX,trainingY+140);
+    text("It is advised that each StarFleet member\nis to participate in the Relaxation\nprograms provided. This is to hone your\nmind and stay in top mental health. How\nfrequently you should participate in the\nprograms is to be disscused with the\ndesignated Ship Counselor",relaxationX-25,relaxationY+140);
+    
     textSize(70);
     text("Choose an option",-320,-200);
   }//end render()
