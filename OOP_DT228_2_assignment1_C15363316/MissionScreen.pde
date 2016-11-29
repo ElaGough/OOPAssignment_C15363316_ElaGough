@@ -1,4 +1,4 @@
-class WeaponsScreen extends ButtonColours
+class MissionScreen extends ButtonColours
 {
   float backX, backY;
   int backSize = 100;
@@ -28,9 +28,9 @@ class WeaponsScreen extends ButtonColours
     textSize(60);
     text("You have chosen:",-280,-170);
     textSize(70);
-    text("Weapons Training",-350,-70);
+    text("Mission Training",-300,-70);
     stroke(200);
-    line(-350, -50, 340, -50);
+    line(-300, -50, 320, -50);
     textSize(45);
     text("Program may take a moment to load",-450,50);    
     text("Please proceed when door opens",-420,150);

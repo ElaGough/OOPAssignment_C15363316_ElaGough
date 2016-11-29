@@ -17,8 +17,8 @@ TrainingOrRelaxationScreen training_or_relaxation_screen;
 TrainingScreen training_screen;
 RelaxationScreen relaxation_screen;
 CombatScreen combat_screen;
-//WeaponsScreen weapons_screen;
-//MissionScreen mission_screen;
+WeaponsScreen weapons_screen;
+MissionScreen mission_screen;
 //BakuScreen baku_screen;
 //RisaScreen risa_screen;
 //EdenScreen eden_screen;
@@ -55,8 +55,8 @@ void setup() {
   training_screen = new TrainingScreen();
   relaxation_screen = new RelaxationScreen();
   combat_screen = new CombatScreen();
-  //weapons_screen = new WeaponsScreen();
-  //mission_screen = new MissionScreen();
+  weapons_screen = new WeaponsScreen();
+  mission_screen = new MissionScreen();
   //baku_screen = new BakuScreen();
   //risa_screen = new RisaScreen();
   //eden_screen = new EdenScreen();
@@ -100,7 +100,7 @@ void draw() {
   {
     combat_screen.render();
   }
-  /*if (screenID == 6)
+  if (screenID == 6)
   {
     weapons_screen.render();
   }
@@ -108,7 +108,7 @@ void draw() {
   {
     mission_screen.render();
   }
-  if (screenID == 8)
+  /*if (screenID == 8)
   {
     risa_screen.render();
   }
@@ -198,7 +198,7 @@ void mousePressed() {
     }
   }
   
-  /*//weapons_screen
+  //weapons_screen
   else if (screenID == 6)
   {
     //back to training_screen
@@ -216,7 +216,7 @@ void mousePressed() {
     }
   }
   
-  //risa_screen
+  /*//risa_screen
   else if (screenID == 8)
   {
     //back to relaxation_screen
