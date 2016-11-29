@@ -66,12 +66,13 @@ void setup() {
   baku_screen = new BakuScreen();
   risa_screen = new RisaScreen();
   eden_screen = new EdenScreen();
+  
 }
 
 //draw
 void draw() {
   background(20);
-  //background(255);
+  //background(0);
   translate(width/2, height/2); //translate (0,0) to centre of screen
   noStroke();
   
@@ -126,6 +127,7 @@ void draw() {
   {
     eden_screen.render();
   }
+  
 }
 
 
