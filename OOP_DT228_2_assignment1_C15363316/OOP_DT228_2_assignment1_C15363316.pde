@@ -41,11 +41,17 @@ void setup() {
   //background sound looping
   minim = new Minim(this);
   StarTrekMelody = minim.loadFile("Star Trek- The Next Generation theme (HQ).mp3",2048);
+  if ( StarTrekMelody == null) {
+    println("Didn't get StarTrekMelody");
+  }
   StarTrekMelody.loop();
   
   //door sound
   minim = new Minim(this);
   Door = minim.loadFile("Car Door Close Outside-SoundBible.com-1122981889.wav",2048);
+  if ( Door == null) {
+    println("Didn't get Door");
+  }
   
   //initilasing classes
   heart = new Heart(); //initilases heart
@@ -157,14 +163,17 @@ void mousePressed() {
     //weapons button
     if (training_screen.weaponsOver == true) {
       screenID = 6;
+      Door();
     }
     //combat button
     if (training_screen.combatOver == true) {
       screenID = 5;
+      Door();
     }
     //mmission button
     if (training_screen.missionOver == true) {
       screenID = 7;
+      Door();
     }
     //back button to training_or_relaxation_screen
     if (training_screen.backOver == true) {
@@ -176,12 +185,15 @@ void mousePressed() {
   else if (screenID == 4) {
     if (relaxation_screen.risaOver == true) {
       screenID = 8;
+      Door();
     }
     if (relaxation_screen.bakuOver == true) {
       screenID = 9;
+      Door();
     }
     if (relaxation_screen.edenOver == true){
       screenID = 10;
+      Door();
     }
     //back button to training_or_relaxation_screen
     if (relaxation_screen.backOver == true) {

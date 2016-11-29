@@ -38,9 +38,7 @@ class RisaScreen extends ButtonColours
     fill(0);
     textSize(30);
     text("Back",backX+15,backY+35);
-    
-    //door sound
-    Door.play();
+
   }
   
   void update() {

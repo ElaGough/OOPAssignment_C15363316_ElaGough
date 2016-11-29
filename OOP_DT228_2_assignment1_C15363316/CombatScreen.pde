@@ -39,8 +39,6 @@ class CombatScreen extends ButtonColours
     textSize(30);
     text("Back",backX+15,backY+35);
     
-    //door sound
-    Door.play();
   }
   
   void update() {
