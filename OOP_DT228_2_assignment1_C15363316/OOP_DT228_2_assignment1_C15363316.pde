@@ -75,7 +75,7 @@ void setup() {
 void draw() {
   background(20);
   //background(0);
-  translate(width/2, height/2); //translate (0,0) to centre of screen
+  translate (width/2, height/2) ; //translate (0,0) to centre of screen
   noStroke();
   
   //cleaner code in draw to call functions:

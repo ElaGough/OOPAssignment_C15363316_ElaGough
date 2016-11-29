@@ -32,7 +32,7 @@ class InfoScreen extends ButtonColours
     textSize(30);
     text("The Holodeck is a simulated reality. It\ncreates artificial environments for\nrecreational or training purposes.",-320,-80); 
     textSize(20);
-    text("To navagate the Holodeck you must connect to the\ninterfaces built in MentalLink. If you are a being that is\nunable to do this then implement the cursor privded. If\nyou are a being that is unable to do either option, ask a\ndesignated StarFleet officer for assistance.",-320,100);
+    text("To navagate the Holodeck you must connect to the\ninterfaces built in MentalLink. If you are a being that is\nunable to do this then implement the cursor provided. If\nyou are a being that is unable to do either option, ask a\ndesignated StarFleet officer for assistance.",-320,100);
     
     fill(0);
     textSize(30);

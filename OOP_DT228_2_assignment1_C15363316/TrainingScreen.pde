@@ -69,6 +69,11 @@ class TrainingScreen extends ButtonColours
     text("Back",backX+15,backY+35);
     
     fill(200);
+    textSize(15);
+    text("Complete a series hand to hand\nstyle combat routines with an AI\ntraining instructer, followed by a\nsparring session that gradualy\nincreases in difficulty.",combatX+10,combatY+140);
+    text("Choose from an assorcment of\nweaponary to hone your skills in\ntarget practice. The longer the\nprogram runs, the more difficult\nit becomes.", weaponsX+10, weaponsY+140);
+    text("Complete a randomised mission logged\nin passed MissionLogs. This can be\ncompleted solo or in a team.",missionX+10,missionY+140);
+    
     textSize(70);
     text("Training",-150,-250);
     textSize(40);
