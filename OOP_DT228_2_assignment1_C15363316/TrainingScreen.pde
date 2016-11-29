@@ -26,7 +26,7 @@ class TrainingScreen extends ButtonColours
     backX = 390;
     backY = 240;
     
-    update(mouseX, mouseY);
+    update();
     stroke(0);
     fill(100);
     
@@ -75,7 +75,7 @@ class TrainingScreen extends ButtonColours
   }//end render()
 
   
-    void update(float x, float y) {
+    void update() {
       if ( overCombat(combatX + width /2 , combatY + height /2, combatSize, combatSize/3) ) {
         combatOver = true;
         weaponsOver = false;

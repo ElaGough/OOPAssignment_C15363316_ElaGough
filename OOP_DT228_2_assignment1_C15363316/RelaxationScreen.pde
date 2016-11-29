@@ -26,7 +26,7 @@ class RelaxationScreen extends ButtonColours
     backX = 390;
     backY = 240;
     
-    update(mouseX, mouseY);
+    update();
     stroke(0);
     fill(100);
     
@@ -75,7 +75,7 @@ class RelaxationScreen extends ButtonColours
   }//end render()
 
   
-    void update(float x, float y) {
+    void update() {
       if ( overBaku(bakuX + width /2 , bakuY + height /2, bakuSize, bakuSize/3) ) {
         bakuOver = true;
         risaOver = false;

@@ -20,7 +20,7 @@ class TrainingOrRelaxationScreen extends ButtonColours
     backX = 390;
     backY = 240;
     
-    update(mouseX, mouseY);
+    update();
     stroke(0);
     fill(100);
     
@@ -59,7 +59,7 @@ class TrainingOrRelaxationScreen extends ButtonColours
   }//end render()
 
   
-    void update(float x, float y) {
+    void update() {
       if ( overTraining(trainingX + width /2 , trainingY + height /2, trainingSize, trainingSize/3) ) {
         trainingOver = true;
         relaxationOver = false;

@@ -14,7 +14,7 @@ class StartScreen extends ButtonColours
     endX = -450;
     endY = 150;
     
-    update(mouseX, mouseY);
+    update();
     stroke(0);
     fill(100);
     
@@ -42,7 +42,7 @@ class StartScreen extends ButtonColours
   }//end render()
 
   
-    void update(float x, float y) {
+    void update() {
       if ( overEnd(endX + width /2 , endY + height /2, endSize, endSize/3) ) {
         endOver = true;
         startOver = false;
